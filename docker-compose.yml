@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  word-counter:
+    build: .
+    ports:
+      - "3214:3214"
+    volumes:
+      - .:/app
+    stdin_open: true
+    tty: true
