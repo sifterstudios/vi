@@ -1,5 +1,5 @@
 const form = document.getElementById("urlForm");
-const result = document.getElementById("result");
+const resultDiv = document.getElementById("result");
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -14,7 +14,7 @@ form.addEventListener("submit", async (e) => {
   resultDiv.textContent = "Processing...";
 
   try {
-    const response = await fetch("/coint-vi", {
+    const response = await fetch("/count-vi", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ url }),
@@ -24,8 +24,7 @@ form.addEventListener("submit", async (e) => {
     }
 
     const data = await response.json();
-    resultDiv.textContent =
-      'Ordet "vi" finnes ${data.count} ganger på nettsiden.';
+    resultDiv.textContent = `Ordet "vi" finnes ${data.count} ganger på nettsiden.`;
   } catch (error) {
     console.error(error);
     resultDiv.textContent = "Noe gikk galt.";

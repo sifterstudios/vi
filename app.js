@@ -1,10 +1,14 @@
 import express from "express";
 import axios from "axios";
-import cheerio from "cheerio";
+import * as cheerio from "cheerio";
 import path from "path";
+import { fileURLToPath } from "url";
 
 const app = express();
 const PORT = 3214;
+
+const __filename = fileURLToPath(import.meta.url); // get the resolved path to the file
+const __dirname = path.dirname(__filename); // get the name of the directory
 
 // Middleware
 app.use(express.json());
