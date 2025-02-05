@@ -6,18 +6,31 @@
     <title>Vi</title>
     <style src="style.css"></style>
   </head>
-  <body>
-    <h1>Hvor mange "vi"?</h1>
-    <form id="urlForm">
-      <input
-        type="text"
-        id="urlInput"
-        placeholder="Enter webpage URL"
-        required
-      />
-      <button type="sumbit">Kalkuler</button>
-    </form>
-    <div id="result"></div>
+  <body
+    class="bg-gray-900 flex items-center justify-center h-screen text-white"
+  >
+    <div
+      class="w-full max-w-lg text-center p-8 bg-gray-800 rounded-lg shadow-lg"
+    >
+      <h1 class="text-4xl font-bold mb-6">Hvor mange "vi"?</h1>
+      <form id="urlForm" class="space-y-4">
+        <input
+          type="text"
+          id="urlInput"
+          placeholder="Skriv inn url"
+          required
+          class="w-full text-lg p-4 rounded-md border border-gray-600 bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <button
+          type="sumbit"
+          class="w-full p-4 text-lg font-bold bg-blue-600 hover:bg-blue-700 rounded-md transition"
+        >
+          Kalkuler
+        </button>
+      </form>
+      <div id="result" class="result mt-6 text-2xl font-semibold"></div>
+    </div>
   </body>
+  <script src="https://cdn.tailwindcss.com"></script>
   <script src="script.js"></script>
 </html>
